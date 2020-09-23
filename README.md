@@ -83,7 +83,7 @@ sudo apt install git
 
 1) Download the project code
 ```bash
-git clone https://github.com/Whaddadraft/Whadda_you_see_RPi.git && cd ./Whadda_you_see
+git clone https://github.com/Whaddadraft/Whadda_you_see_RPi.git && cd ./Whadda_you_see_RPi
 ```
 
 4) Install the Text-To-Speech module using our install script:

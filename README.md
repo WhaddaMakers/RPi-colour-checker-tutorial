@@ -1,6 +1,6 @@
 # Whadda you see?
 
-![](./demo.jpg)
+![](./pictures/demo.jpg)
 
 Are you always having discussions with other people (or even yourselves) what colour a certain object has? If you build this project that will all be in the past! Using your raspberry pi and a colour sensor we can make a cool gadget that determines the precise main colour of an object. It can even SAY what the colour is using a Text-To-Speech module. 
 
@@ -95,4 +95,4 @@ sudo chmod +x install_tts.sh && sudo ./install_tts.sh
 
 ## Prepping the connection
 
-![](./fritzing_RPi_bb.png)
+![](./pictures/fritzing_RPi_bb.png)

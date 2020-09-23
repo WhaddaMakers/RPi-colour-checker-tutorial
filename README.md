@@ -72,36 +72,67 @@ If you're connecting to the pi remotely, go to your network router setup webpage
 Run the following commands:
 
 1) Make sure the python package manager (pip) is installed:
-```
+```bash
 sudo apt install python3-pip
 ```
 
 2) Install git client so we can easily download the project code
-```
+```bash
 sudo apt install git
 ```
 
-3) Download the project code
-```
+1) Download the project code
+```bash
 git clone https://github.com/Whaddadraft/Whadda_you_see_RPi.git && cd ./Whadda_you_see
 ```
 
 4) Install the Text-To-Speech module using our install script:
-```
+```bash
 sudo chmod +x install_tts.sh && sudo ./install_tts.sh
 ```
 
 5) Install the required python modules:
-```
+```bash
 pip3 install -r requirements.txt
 ```
 
 ## Prepping the connection
 
+It is possible to wire everything up without a breadboard using Male-to-Female jumper wires, although using a breadbord and a Raspberry Pi GPIO extension/breakout board will make the process a lot easier. 
+
+### Connection Tables
+
+| TCS3200 Color sensor | Raspberry Pi |
+|:--------------------:|:------------:|
+| V | 3V3 |
+| G | GND |
+| OE | GND |
+| LED | GND |
+| GND | GND |
+| S0 | GPIO 5|
+| S1 | GPIO 6 |
+| S2 | GPIO 13 |
+| S3 | GPIO 19 |
+| OUT | GPIO 26 |
+
+| 0.96" OLED | Raspberry Pi |
+|:----------:|:------------:|
+| VCC | 3V3 |
+| GND | GND |
+| SCL | SCL1|
+| SDA | SDA1|
+
+| Button | Raspberry Pi |
+|:------:|:------------:|
+| Top right pin | GPIO 20 |
+| Bottom left pin | GND |
+
+### Connection Diagram
+
 ![](./pictures/fritzing_RPi_bb.png)
 
 ## Run the program!
 
-```
+```bash
 python3 whadda_you_see.py
 ```

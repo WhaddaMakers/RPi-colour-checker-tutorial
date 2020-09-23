@@ -51,7 +51,7 @@ If the button (connected to GPIO pin 20) is pressed, the corresponding colour is
 
 ### Preperations:
 
-1) If you don't have a (recent) version of Raspberry Pi OS installed on the Pi's microSD card, go to [raspberrypi.org/downloads](https://www.raspberrypi.org/downloads/) and download the latest version of raspberry Pi OS. Use the Raspberry Pi Imager (also available for download on [raspberrypi.org/downloads](https://www.raspberrypi.org/downloads/)) to flash the MicroSD card with the downloaded OS image. 
+1) If you don't have a (recent) version of Raspberry Pi OS installed on the Pi's microSD card, go to [raspberrypi.org/downloads](https://www.raspberrypi.org/downloads/) and download the latest version of the Raspberry Pi Imager. Use the Raspberry Pi Imager to flash the MicroSD card with the latest verion of Raspberry Pi OS. 
 
 From this point on there are 2 ways to configure the pi: **on the pi itself** by connecting the necessary peripherals (mouse, keyboard and screen) to it directly, or **using your pc to connect to it remotely**. If you plan to use the 1st option you can skip step 2 and proceed directly to step 3.
 
@@ -73,12 +73,12 @@ Run the following commands:
 
 1) Make sure the python package manager (pip) is installed:
 ```
-sudo apt-get install python3-pip
+sudo apt install python3-pip
 ```
 
 2) Install git client so we can easily download the project code
 ```
-sudo apt-get install git
+sudo apt install git
 ```
 
 3) Download the project code

@@ -63,4 +63,8 @@ Navigate to the SD Card partition named ```BOOT``` and add an empty file called 
 4) Wait 2-3 min until the pi is fully booted. If you're using a seperate monitor, run through the initial Raspberry Pi OS setup wizard to configure network connections, etc... 
 If you're connecting to the pi remotely, go to your network router setup webpage or use an IP-scanner (e.g. [Angry IP Scanner](https://angryip.org/download/)) to find the assigned IP-address of your pi and connect to it by opening Powershell/Terminal and type in the following command: ```ssh pi@<REPLACE WITH IP ADDRESS>```. The default password is ```raspberry```.
 
-5) 
+5) To make sure your pi is fully up-to-date, run the following command: ```sudo apt update && sudo apt upgrade -y```
+
+## Prepping the connection
+
+![](./fritzing_RPi_bb.png)

@@ -65,6 +65,34 @@ If you're connecting to the pi remotely, go to your network router setup webpage
 
 5) To make sure your pi is fully up-to-date, run the following command: ```sudo apt update && sudo apt upgrade -y```
 
+6) Enable the I2C interface (necessary to use the OLED display) by running ```sudo raspi-config``` and selecting ```5 Interfacing Options > P5 I2C > Yes```.
+
+## Installing necessary software
+
+Run the following commands:
+
+1) Make sure the python package manager (pip) is installed:
+```
+sudo apt-get install python3-pip
+```
+
+2) Install git client so we can easily download the project code
+```
+sudo apt-get install git
+```
+
+3) Download the project code
+```
+git clone https://github.com/Whaddadraft/Whadda_you_see_RPi.git && cd ./Whadda_you_see
+```
+
+4) Install the Text-To-Speech module using our install script:
+```
+sudo chmod +x install_tts.sh && sudo ./install_tts.sh
+```
+
+5) 
+
 ## Prepping the connection
 
 ![](./fritzing_RPi_bb.png)

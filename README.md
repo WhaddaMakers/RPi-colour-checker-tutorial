@@ -91,8 +91,17 @@ git clone https://github.com/Whaddadraft/Whadda_you_see_RPi.git && cd ./Whadda_y
 sudo chmod +x install_tts.sh && sudo ./install_tts.sh
 ```
 
-5) 
+5) Install the required python modules:
+```
+pip3 install -r requirements.txt
+```
 
 ## Prepping the connection
 
 ![](./pictures/fritzing_RPi_bb.png)
+
+## Run the program!
+
+```
+python3 whadda_you_see.py
+```

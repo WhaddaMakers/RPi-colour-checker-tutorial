@@ -148,7 +148,7 @@ def read_color():
     val_perc = round(HSV_val[1]*100)
     sat_perc = round(HSV_val[2]*100)
 
-    draw.rectangle((30, 0, 63, 30), fill=0)
+    draw.rectangle((35, 0, 63, 30), fill=0)
     draw.rectangle((100, 0, 127, 30), fill=0)
     draw.text((30, 0), "{:3d} %".format(R_perc), font=font, fill=255, align="right")
     draw.text((30, 10), "{:3d} %".format(G_perc), font=font, fill=255, align="right")

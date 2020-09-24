@@ -39,7 +39,7 @@ If the button (connected to GPIO pin 20) is pressed, the corresponding colour is
   - Internet connection (WiFi or wired ethernet)
 * Working remotely on pc:
     - PC
-    - RPi & PC connected to same network (WiFI or wired ethernet)
+    - RPi & PC connected to same network (WiFi or wired ethernet)
 
 ## PROGRAMMING  the development board
 
@@ -96,6 +96,11 @@ sudo chmod +x install_tts.sh && sudo ./install_tts.sh
 pip3 install -r requirements.txt
 ```
 
+6) If you are using headphones via the 3.5 mm audio jack, use the raspi-config tool to select the forced headphones audio output
+```
+sudo raspi-config
+7 Advanced Options > A4 Audio > 1 Headphones
+```
 ## Prepping the connection
 
 It is possible to wire everything up without a breadboard using Male-to-Female jumper wires, although using a breadbord and a Raspberry Pi GPIO extension/breakout board will make the process a lot easier. 

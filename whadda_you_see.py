@@ -269,6 +269,10 @@ def read_color():
 
     return color_str, HSV_val
 
+print("Whadda you see?")
+print("===============")
+print("\nPush button to get colour info\n")
+
 while True:
     color_str, HSV_val = read_color() # Read and display colour name and values
 

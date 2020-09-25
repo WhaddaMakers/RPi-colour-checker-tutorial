@@ -43,18 +43,21 @@ Author: Midas Gossye
 (c) 2020 Whadda, premium makers brand by Velleman
 """
 
+OLED_SCREEN_INSTALLED = True
+
 # Import necessary modules
 import RPi.GPIO as GPIO
 from time import sleep
 import time
 import colorsys
 import os
-from board import SCL, SDA
-import busio
 from PIL import Image, ImageDraw, ImageFont
 
 # Import the SSD1306 module.
-import adafruit_ssd1306
+if OLED_SCREEN_INSTALLED:
+    import adafruit_ssd1306
+    from board import SCL, SDA
+    import busio
 
 GPIO.setmode(GPIO.BCM) # Use processor pin numbering system
 
@@ -69,10 +72,11 @@ Out = 26    # Out colour sensor
 Button = 20 # Button
 ###############################
 
-i2c = busio.I2C(SCL, SDA) # Initialize the I2C bus for the OLED screen
+if OLED_SCREEN_INSTALLED:
+    i2c = busio.I2C(SCL, SDA) # Initialize the I2C bus for the OLED screen
 
-oled = adafruit_ssd1306.SSD1306_I2C(128, 64, i2c) # Initialize OLED screen (128x64 pixels)
-oled.fill(0) # fill the screen with 0's (clear screen)
+    oled = adafruit_ssd1306.SSD1306_I2C(128, 64, i2c) # Initialize OLED screen (128x64 pixels)
+    oled.fill(0) # fill the screen with 0's (clear screen)
 
 # setup GPIO pins (inputs/outputs)
 GPIO.setup(S0, GPIO.OUT)
@@ -98,50 +102,51 @@ colour_names = ['Red', 'Green', 'Blue', 'White']
 
 
 # Show Raspberry Pi Logo on OLED screen for 1 sec
-image = Image.open("RPI.bmp") 
-oled.image(image)
-oled.show()
-sleep(1)
+if OLED_SCREEN_INSTALLED:
+    image = Image.open("RPI.bmp") 
+    oled.image(image)
+    oled.show()
+    sleep(1)
 ##################################################
 
-oled.fill(0) # fill the screen with 0's (clear screen)
+    oled.fill(0) # fill the screen with 0's (clear screen)
 
 # Show Whadda Logo on OLED screen for 2 secs
-image = Image.open("WHADDA.bmp")
-oled.image(image)
-oled.show()
-sleep(2)
+    image = Image.open("WHADDA.bmp")
+    oled.image(image)
+    oled.show()
+    sleep(2)
 ##################################################
 
 
 # Open a new blank image and draw object to later draw tex and shapes on
-image = Image.new("1", (oled.width, oled.height))
-draw = ImageDraw.Draw(image)
+    image = Image.new("1", (oled.width, oled.height))
+    draw = ImageDraw.Draw(image)
 #########################################################################
 
-oled.fill(0) # fill the screen with 0's (clear screen)
+    oled.fill(0) # fill the screen with 0's (clear screen)
 
 # Load a font in 2 different sizes.
-font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 10)
-font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 22)
+    font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 10)
+    font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 22)
 
 # Draw the text that doesn't need updating
-draw.text((0, 0), "Red: ", font=font, fill=255, align="right")
-draw.text((0, 10), "Green: ", font=font, fill=255, align="right")
-draw.text((0, 20), "Blue: ", font=font, fill=255, align="right")
+    draw.text((0, 0), "Red: ", font=font, fill=255, align="right")
+    draw.text((0, 10), "Green: ", font=font, fill=255, align="right")
+    draw.text((0, 20), "Blue: ", font=font, fill=255, align="right")
 
 
-draw.text((70, 0), "Hue: ", font=font, fill=255, align="right")
-draw.text((70, 10), "Sat.: ", font=font, fill=255, align="right")
-draw.text((70, 20), "Value: ", font=font, fill=255, align="right")
+    draw.text((70, 0), "Hue: ", font=font, fill=255, align="right")
+    draw.text((70, 10), "Sat.: ", font=font, fill=255, align="right")
+    draw.text((70, 20), "Value: ", font=font, fill=255, align="right")
 ##################################################################
 
-draw.line((64, 0, 64, 32), width=1, fill=255)  # draw vertical seperation line
-draw.line((0, 32, 127, 32), width=1, fill=255) # draw horizontal seperation line
+    draw.line((64, 0, 64, 32), width=1, fill=255)  # draw vertical seperation line
+    draw.line((0, 32, 127, 32), width=1, fill=255) # draw horizontal seperation line
 
 # Update image on OLED
-oled.image(image)
-oled.show()
+    oled.image(image)
+    oled.show()
 ######################
 
 """
@@ -198,22 +203,24 @@ def read_color():
     sat_perc = round(HSV_val[2]*100)
     #####################################################
 
-    # draw "black" rectangle to clear screen space for updated numbers
-    draw.rectangle((34, 0, 63, 30), fill=0)
-    draw.rectangle((100, 0, 127, 30), fill=0)
-    ###################################################################
+    
+    if OLED_SCREEN_INSTALLED:
+        # draw "black" rectangle to clear screen space for updated numbers
+        draw.rectangle((34, 0, 63, 30), fill=0)
+        draw.rectangle((100, 0, 127, 30), fill=0)
+        ###################################################################
 
-    # Put updated Red, Green and Blue percentages on screen
-    draw.text((30, 0), "{:3d} %".format(R_perc), font=font, fill=255, align="right")
-    draw.text((30, 10), "{:3d} %".format(G_perc), font=font, fill=255, align="right")
-    draw.text((30, 20), "{:3d} %".format(B_perc), font=font, fill=255, align="right")
-    #################################################################################
+        # Put updated Red, Green and Blue percentages on screen
+        draw.text((30, 0), "{:3d} %".format(R_perc), font=font, fill=255, align="right")
+        draw.text((30, 10), "{:3d} %".format(G_perc), font=font, fill=255, align="right")
+        draw.text((30, 20), "{:3d} %".format(B_perc), font=font, fill=255, align="right")
+        #################################################################################
 
-    # Put updated Hue, value and saturation numbers on screen
-    draw.text((100, 0), "{:3d} °".format(hue_deg), font=font, fill=255, align="right")
-    draw.text((100, 10), "{:3d} %".format(val_perc), font=font, fill=255, align="right")
-    draw.text((100, 20), "{:3d} %".format(sat_perc), font=font, fill=255, align="right")
-    ####################################################################################
+        # Put updated Hue, value and saturation numbers on screen
+        draw.text((100, 0), "{:3d} °".format(hue_deg), font=font, fill=255, align="right")
+        draw.text((100, 10), "{:3d} %".format(val_perc), font=font, fill=255, align="right")
+        draw.text((100, 20), "{:3d} %".format(sat_perc), font=font, fill=255, align="right")
+        ####################################################################################
     
     # Determine colour based on hue parameter
     if sat_perc < 35:
@@ -234,18 +241,19 @@ def read_color():
         color_str = "No valid color detected"
     #########################################
 
-    draw.rectangle((0, 34, 128, 60), fill=0) # clear bottom part of screen by drawing "black" rectangle
+    if OLED_SCREEN_INSTALLED:
+        draw.rectangle((0, 34, 128, 60), fill=0) # clear bottom part of screen by drawing "black" rectangle
 
-    # if a valid color is detected...
-    if color_str != "No valid color detected" and color_str != "Black/Dark":
-        draw.rectangle((0, 34, 128, 60), fill=255)                  # Draw a filled rectangle as background
-        w, h = draw.textsize(color_str, font=font2)                 # Calculate pixel width and height of color name
-        draw.text(((128-w)/2, 33), color_str, font=font2, fill=0)   # Put color name on screen with inversed text
-        
-    # Update OLED screen with new image
-    oled.image(image) 
-    oled.show()
-    ###################################
+        # if a valid color is detected...
+        if color_str != "No valid color detected" and color_str != "Black/Dark":
+            draw.rectangle((0, 34, 128, 60), fill=255)                  # Draw a filled rectangle as background
+            w, h = draw.textsize(color_str, font=font2)                 # Calculate pixel width and height of color name
+            draw.text(((128-w)/2, 33), color_str, font=font2, fill=0)   # Put color name on screen with inversed text
+            
+        # Update OLED screen with new image
+        oled.image(image) 
+        oled.show()
+        ###################################
 
     return color_str, HSV_val
 
@@ -262,7 +270,7 @@ while True:
  
         # Using the Pico Text-To-Speech program SAY the colour
         os.system('pico2wave -w tts.wav "{}" && aplay tts.wav'.format(color_str))
-        
+
         print("=================")
         print("\n")
         

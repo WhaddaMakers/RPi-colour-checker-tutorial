@@ -159,3 +159,20 @@ You can now run the program by using these commands:
 OR
 ./whadda_you_see.py --OLED
 ```
+
+## Extending/Altering the code
+
+If you want to add and/or change colours you can add additional ```elif``` statements after the line ```color_str = "RED"```:
+
+```python
+elif hue_deg > 340 and hue_deg < 356:
+        color_str = "RED"
+## ADD YOUR OWN COLOUR COMPARE FUNCTIONS HERE ##
+# example:
+elif hue_deg > 160 and hue_deg < 210:
+  color_str = "CYAN/TEAL"
+################################################
+else:
+  color_str = "No valid color detected"
+```
+Change the numbers in the ```elif``` statement to alter the hue boundaries for which a certain colour name will be set. If you want to get a bit of a "feel" for hue parameters you can use an [HSV colour picker](https://alloyui.com/examples/color-picker/hsv.html) and alter the Hue parameter to see what the corresponding colours are.

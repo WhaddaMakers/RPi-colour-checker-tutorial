@@ -137,7 +137,25 @@ It is possible to wire everything up without a breadboard using Male-to-Female j
 ![](./pictures/fritzing_RPi_bb.png)
 
 ## Run the program!
+Now it's finally time to test the setup!
 
+If you have an OLED screen installed, you can run the program by entering this command:
+```bash
+python3 whadda_you_see.py --OLED
+```
+
+If you don't have an OLED screen wired up, use this command:
 ```bash
 python3 whadda_you_see.py
+```
+
+If you don't want to add the ```python3``` to the command every time to run it, you can make the program executable without it by running the following command:
+```bash
+sudo chmod +x whadda_you_see.py
+```
+You can now run the program by using these commands:
+```bash
+./whadda_you_see.py
+OR
+./whadda_you_see.py --OLED
 ```

@@ -61,11 +61,13 @@ if OLED_SCREEN_INSTALLED:
     import busio
 ########################################################
 
+# Parse the command arguments
 parser = argparse.ArgumentParser(prog='whadda_you_see', description='Determine and display colour from TCS3200 colour sensor')
 parser.add_argument('--OLED', help='Add if OLED screen is installed', action='store_true', default='store_false')
 
-parser.parse_args()
-OLED_SCREEN_INSTALLED = OLED
+args = parser.parse_args()
+OLED_SCREEN_INSTALLED = args.OLED
+###############################################################################################################################
 
 GPIO.setmode(GPIO.BCM) # Use processor pin numbering system
 

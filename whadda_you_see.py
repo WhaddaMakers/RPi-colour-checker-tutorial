@@ -34,6 +34,8 @@ For more information, check out whadda.com
 
 Required Python modules:
     - RPi.GPIO (should be installed by default, if not use folowing command to install: sudo apt install python-rpi.gpio python3-rpi.gpio)
+    - Pillow (command to install: pip3 install Pillow)
+    - adafruit_ssd1306 (command to install: pip3 install adafruit-circuitpython-ssd1306)
 
 Code inspired by how to Mechatronics (https://www.electronicshub.org/raspberry-pi-color-sensor-tutorial/)
 
@@ -67,37 +69,49 @@ Out = 26
 Button = 20
 ##################
 
-i2c = busio.I2C(SCL, SDA)
+i2c = busio.I2C(SCL, SDA) # Initialize the I2C bus for the OLED screen
 
-oled = adafruit_ssd1306.SSD1306_I2C(128, 64, i2c)
-oled.fill(0)
-image = Image.open("RPI.bmp")
+oled = adafruit_ssd1306.SSD1306_I2C(128, 64, i2c) # Initialize OLED screen (128x64 pixels)
+oled.fill(0) # fill the screen with 0's (clear screen)
+
+# Show Raspberry Pi Logo on OLED screen for 1 sec
+image = Image.open("RPI.bmp") 
 oled.image(image)
 oled.show()
 sleep(1)
-oled.fill(0)
+##################################################
+
+oled.fill(0) # fill the screen with 0's (clear screen)
+
+# Show Whadda Logo on OLED screen for 2 secs
 image = Image.open("WHADDA.bmp")
 oled.image(image)
 oled.show()
 sleep(2)
+##################################################
 
 
-
+# Open a new blank image and draw object to later draw tex and shapes on
 image = Image.new("1", (oled.width, oled.height))
 draw = ImageDraw.Draw(image)
-oled.fill(0)
+#########################################################################
+
+oled.fill(0) # fill the screen with 0's (clear screen)
+
 # Load a font in 2 different sizes.
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 10)
 font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 22)
 
-# Draw the text
+# Draw the text that doesn't need updating
 draw.text((0, 0), "Red: ", font=font, fill=255, align="right")
 draw.text((0, 10), "Green: ", font=font, fill=255, align="right")
 draw.text((0, 20), "Blue: ", font=font, fill=255, align="right")
 
+
 draw.text((70, 0), "Hue: ", font=font, fill=255, align="right")
 draw.text((70, 10), "Sat.: ", font=font, fill=255, align="right")
 draw.text((70, 20), "Value: ", font=font, fill=255, align="right")
+##################################################################
 
 draw.line((64, 0, 64, 32), width=1, fill=255)
 draw.line((0, 32, 127, 32), width=1, fill=255)

@@ -44,8 +44,6 @@ Author: Midas Gossye
 (c) 2020 Whadda, premium makers brand by Velleman
 """
 
-OLED_SCREEN_INSTALLED = False
-
 # Import necessary modules
 import RPi.GPIO as GPIO
 from time import sleep
@@ -55,12 +53,7 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 import argparse
 
-# Import the OLED modules if an OLED screen is installed
-if OLED_SCREEN_INSTALLED:
-    import adafruit_ssd1306
-    from board import SCL, SDA
-    import busio
-########################################################
+
 
 # Parse the command arguments
 parser = argparse.ArgumentParser(prog='whadda_you_see', description='Determine and display colour from TCS3200 colour sensor')
@@ -69,6 +62,13 @@ parser.add_argument('--OLED', help='Add if OLED screen is installed', action='st
 args = parser.parse_args()
 OLED_SCREEN_INSTALLED = args.OLED
 ###############################################################################################################################
+
+# Import the OLED modules if an OLED screen is installed
+if OLED_SCREEN_INSTALLED:
+    import adafruit_ssd1306
+    from board import SCL, SDA
+    import busio
+########################################################
 
 GPIO.setmode(GPIO.BCM) # Use processor pin numbering system
 

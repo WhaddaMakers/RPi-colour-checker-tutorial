@@ -97,7 +97,7 @@ pip3 install -r requirements.txt
 ```
 
 6) If you are using headphones via the 3.5 mm audio jack, use the raspi-config tool to select the forced headphones audio output
-```
+```bash
 sudo raspi-config
 7 Advanced Options > A4 Audio > 1 Headphones
 ```

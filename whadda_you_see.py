@@ -44,7 +44,7 @@ Author: Midas Gossye
 (c) 2020 Whadda, premium makers brand by Velleman
 """
 
-OLED_SCREEN_INSTALLED = True
+OLED_SCREEN_INSTALLED = False
 
 # Import necessary modules
 import RPi.GPIO as GPIO
@@ -64,7 +64,7 @@ if OLED_SCREEN_INSTALLED:
 
 # Parse the command arguments
 parser = argparse.ArgumentParser(prog='whadda_you_see', description='Determine and display colour from TCS3200 colour sensor')
-parser.add_argument('--OLED', help='Add if OLED screen is installed', action='store_true', default='store_false')
+parser.add_argument('--OLED', help='Add if OLED screen is installed', action='store_true', default=False)
 
 args = parser.parse_args()
 OLED_SCREEN_INSTALLED = args.OLED

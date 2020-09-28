@@ -49,7 +49,7 @@ If the button (connected to GPIO pin 20) is pressed, the corresponding colour is
 
 ### Difficulty: Intermediate
 
-### Preperations:
+### Preparations:
 
 1) If you don't have a (recent) version of Raspberry Pi OS installed on the Pi's microSD card, go to [raspberrypi.org/downloads](https://www.raspberrypi.org/downloads/) and download the latest version of the Raspberry Pi Imager. Use the Raspberry Pi Imager to flash the MicroSD card with the latest verion of Raspberry Pi OS. 
 

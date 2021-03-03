@@ -19,17 +19,17 @@ If the button (connected to GPIO pin 20) is pressed, the corresponding colour is
 ## MATERIALS
 
 ### Ingredients:
-*  Raspberry Pi 3B/B+ or 4B set (e.g. [Whadda PI4SET](https://www.vellemanformakers.com/product/raspberry-pi-4-2gb-starter-kit-pi4set/))
+*  Raspberry Pi 3B/B+ or 4B set (e.g. [Whadda PI4SET](https://whadda.com/product/raspberry-pi-4-2gb-starter-kit-pi4set/))
     - Raspberry Pi (3B/B+ or 4B)
     - Good quality USB power supply
     - \>= 8 GB MicroSD Card
-* Basic electronics parts (e.g. Whadda [RPi DIY Kit (VMP501)](https://www.vellemanformakers.com/product/diy-kit-for-raspberry-pi-vmp501/) or [RPi electronics parts pack (VMP500)](https://www.vellemanformakers.com/product/electronic-parts-pack-for-raspberry-pi-vmp500/))
+* Basic electronics parts (e.g. Whadda [RPi DIY Kit (WPK801/VMP501)](https://whadda.com/product/diy-kit-for-raspberry-pi-vmp501/) or [RPi electronics parts pack (WPK800/VMP500)](https://whadda.com/product/electronic-parts-pack-for-raspberry-pi-vmp500/))
   - Breadboard
   - Pushbutton
   - Jumper cables (Female to Female & Male to Female)
   - [OPTIONAL] RPi GPIO Extension board
-* TCS3200 color sensor module (e.g. [Whadda INSERT WHADDA CODE/VMA325 COLOR SENSOR TCS3200 MODULE](https://www.vellemanformakers.com/product/color-sensor-tcs3200-module-vma325/))
-* [OPTIONAL] 0.96" OLED screen (e.g. [Whadda INSERT WHADDA CODE/VMA438 0.96" OLED SCREEN WITH I2C FOR ARDUINO](https://www.vellemanformakers.com/product/0-96-inch-oled-screen-with-i2c-for-arduino-vma438/))
+* TCS3200 color sensor module (e.g. [Whadda WPSE325/VMA325 COLOR SENSOR TCS3200 MODULE](https://whadda.com/product/color-sensor-tcs3200-module-vma325/))
+* [OPTIONAL] 0.96" OLED screen (e.g. [Whadda WPI438/VMA438 0.96" OLED SCREEN WITH I2C FOR ARDUINO](https://whadda.com/product/0-96-inch-oled-screen-with-i2c-for-arduino-vma438/))
 
 ### Tools:
 * Working locally on Raspberry Pi:

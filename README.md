@@ -65,7 +65,7 @@ If you're connecting to the pi remotely, go to your network router setup webpage
 
 5) To make sure your pi is fully up-to-date, run the following command: ```sudo apt update && sudo apt upgrade -y```
 
-6) Enable the I2C interface (necessary to use the OLED display) by running ```sudo raspi-config``` and selecting ```5 Interfacing Options > P5 I2C > Yes```.
+6) Enable the I2C interface (necessary to use the OLED display) by running ```sudo raspi-config``` and selecting ```3 Interface Options > P5 I2C > Yes```.
 
 ## Installing necessary software
 
@@ -99,7 +99,7 @@ pip3 install -r requirements.txt
 6) If you are using headphones via the 3.5 mm audio jack, use the raspi-config tool to select the forced headphones audio output
 ```bash
 sudo raspi-config
-7 Advanced Options > A4 Audio > 1 Headphones
+1 System options > S2 Audio > 1 Headphones
 ```
 ## Prepping the connection
 

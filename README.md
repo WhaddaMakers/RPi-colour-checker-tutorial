@@ -28,6 +28,25 @@ This project uses a colour sensor to determine the main colour of an object. The
 * TCS3200 color sensor module (e.g. [Whadda WPSE325/VMA325 COLOR SENSOR TCS3200 MODULE](https://whadda.com/product/color-sensor-tcs3200-module-vma325/))
 * [OPTIONAL] 0.96" OLED screen (e.g. [Whadda WPI438/VMA438 0.96" OLED SCREEN WITH I2C FOR ARDUINO](https://whadda.com/product/0-96-inch-oled-screen-with-i2c-for-arduino-vma438/))
 
+<table class="table table-hover table-striped table-bordered">
+  <tr align="center">
+   <td><a href="https://whadda.com/product/raspberry-pi-4-2gb-starter-kit-pi4set/"><img src="https://cdn.whadda.com/wp-content/uploads/2020/01/27104737/pi4set-2.jpg" alt="Whadda Pi 4 starter kit"></a></td>
+   <td><a href="https://whadda.com/product/color-sensor-tcs3200-module-vma325/"><img src="https://cdn.whadda.com/wp-content/uploads/2019/02/27100921/vma325.jpg" alt="Whadda TCS3200 colour sensor"></a></td>
+  </tr>
+  <tr align="center">
+    <td><i><a href="https://whadda.com/product/raspberry-pi-4-2gb-starter-kit-pi4set">Whadda Raspberry Pi 4 starter set</a></i></td>
+    <td><i><a href="https://whadda.com/product/color-sensor-tcs3200-module-vma325/">Whadda TCS3200 colour sensor</a></i></td>
+  </tr>
+    <tr align="center">
+   <td><a href="https://whadda.com/product/diy-kit-for-raspberry-pi-vmp501/"><img src="https://cdn.whadda.com/wp-content/uploads/2019/02/27100807/vmp501.jpg" alt="Whadda RPi DIY kit"></a></td>
+   <td><a href="https://whadda.com/product/0-96-inch-oled-screen-with-i2c-for-arduino-vma438/"><img src="https://cdn.whadda.com/wp-content/uploads/2019/02/27100949/vma438.jpg" alt="Whadda 0.96'' OLED screen"></a></td>
+  </tr>
+  <tr align="center">
+    <td><i><a href="https://whadda.com/product/diy-kit-for-raspberry-pi-vmp501/">Whadda Raspberry Pi DIY kit</a></i></td>
+    <td><i><a href="https://whadda.com/product/0-96-inch-oled-screen-with-i2c-for-arduino-vma438/">Whadda 0.96" OLED screen</a></i></td>
+  </tr>
+</table>
+
 ### Tools:
 * Working locally on Raspberry Pi:
   - HDMI Screen/monitor

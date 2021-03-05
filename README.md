@@ -1,4 +1,4 @@
-# Whadda you see?
+# Raspberry Pi color checking project
 
 ![](https://cdn.whadda.com/wp-content/uploads/2021/03/04135205/2-3-800x600.jpg)
 

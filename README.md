@@ -97,7 +97,7 @@ sudo apt install python3-pip
 sudo apt install git
 ```
 
-1) Download the project code
+3) Download the project code
 ```bash
 git clone https://github.com/WhaddaMakers/Whadda_you_see_RPi.git && cd ./Whadda_you_see_RPi
 ```

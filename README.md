@@ -2,19 +2,16 @@
 
 ![](https://cdn.whadda.com/wp-content/uploads/2021/03/04135205/2-3-800x600.jpg)
 
-Are you always having discussions with other people (or even yourselves) what colour a certain object has? If you build this project that will all be in the past! Using your raspberry pi and a colour sensor we can make a cool gadget that determines the precise main colour of an object. It can even SAY what the colour is using a Text-To-Speech module. 
+A Raspberry Pi is useful in all kinds of ways, even if you are looking to make a project that can help people increase the quality of their lives. This project is meant for people who are colourblind or have trouble seeing. Using your raspberry pi and a colour sensor, we can make a cool gadget that determines the precise main colour of an object. It can even say what colour it is detecting by using a Text-To-Speech module.
 
 ## Project description - How Does it work?
 
-### What can this project do?
-This project uses a colour sensor to determine the main colour of an object.
- The Hue color parameter (a number that represents the "pure colour tint") is calculated based on the RGB-values that are read from the sensor.
-From the Hue parameter it is possible to determine which basic color is presented to the sensor. 
-If the button (connected to GPIO pin 20) is pressed, the corresponding colour is printed on the terminal and can be heard using the on-board audio (using a Text-To-Speech program). Optionally, you can also attach an OLED screen and all of the regular RGB and HSV colour parameters will be displayed, together with the determined colour.
+### How does it work?
+This project uses a colour sensor to determine the main colour of an object. The Hue colour parameter (a number that represents the “pure colour tint”) is calculated based on the RGB-values that are read from the sensor. From the Hue parameter, it is possible to determine which basic colour is presented to the sensor. If the button (connected to GPIO pin 20) is pressed, the corresponding colour is printed on the terminal and can be heard using the on-board audio (using a Text-To-Speech program). Optionally, you can also attach an OLED screen and all of the regular RGB and HSV colour parameters will be displayed, together with the determined colour.
 
 ### You will need to do the following things for the project to work:
 
-### Level of difficulty: Intermediate
+### Level of difficulty: intermediate
 
 ## MATERIALS
 

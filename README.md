@@ -99,7 +99,7 @@ sudo apt install git
 
 3) Download the project code
 ```bash
-git clone https://github.com/WhaddaMakers/Whadda_you_see_RPi.git && cd ./Whadda_you_see_RPi
+git clone https://github.com/WhaddaMakers/RPi-colour-checker.git && cd ./RPi-colour-checker
 ```
 
 4) Install the Text-To-Speech module using our install script:
